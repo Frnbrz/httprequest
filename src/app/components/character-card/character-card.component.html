@@ -11,7 +11,7 @@
     <div class="card-body">
       <h1 class="card-title">{{ character.name }}</h1>
       <p class="card-text"><strong>ID:</strong> {{ character.id }}</p>
-      <p class="card-text"><strong>Race:</strong> {{ character.race }}</p>
+      <!-- <p class="card-text"><strong>Race:</strong> {{ character.race }}</p>
       <p class="card-text"><strong>Gender:</strong> {{ character.gender }}</p>
       <p class="card-text">
         <strong>Ki:</strong> {{ character.ki }} / {{ character.maxKi }}
@@ -21,9 +21,11 @@
       </p>
       <p class="card-text">
         <strong>Description:</strong> {{ character.description }}
-      </p>
+      </p> -->
       <footer class="card-text">
-        <small class="text-muted">Deleted At: {{ character.deletedAt }}</small>
+        <a class="btn btn-primary" [routerLink]="`character/${character.id}`"
+          >Ver más</a
+        >
       </footer>
     </div>
   </div>
