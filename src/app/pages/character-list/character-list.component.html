@@ -1,5 +1,7 @@
 <section class="list-group">
   @for (character of characters; track $index) {
-  <app-character-card [character]="character"></app-character-card>
+  <article class="list-group-item" style="max-width: 540px">
+    <app-character-card [character]="character"></app-character-card>
+  </article>
   }
 </section>
