@@ -1,16 +1,16 @@
 @if(character){
-<div class="card mb-3" style="max-width: 540px">
+<article class="list-group-item" style="max-width: 540px">
   <div class="row g-0">
-    <div class="col-md-4">
+    <figure class="col-md-4">
       <img
         src="{{ character.image }}"
         class="img-fluid rounded-start"
         alt="{{ character.name }}"
       />
-    </div>
+    </figure>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{ character.name }}</h5>
+        <h1 class="card-title">{{ character.name }}</h1>
         <p class="card-text"><strong>ID:</strong> {{ character.id }}</p>
         <p class="card-text"><strong>Race:</strong> {{ character.race }}</p>
         <p class="card-text"><strong>Gender:</strong> {{ character.gender }}</p>
@@ -23,14 +23,14 @@
         <p class="card-text">
           <strong>Description:</strong> {{ character.description }}
         </p>
-        <p class="card-text">
+        <footer class="card-text">
           <small class="text-muted"
             >Deleted At: {{ character.deletedAt }}</small
           >
-        </p>
+        </footer>
       </div>
     </div>
   </div>
-</div>
+</article>
 
 }

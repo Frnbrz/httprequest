@@ -1,3 +1,5 @@
-@for (character of characters; track $index) {
-<app-character-card [character]="character" />
-}
+<section class="list-group">
+  @for (character of characters; track $index) {
+  <app-character-card [character]="character"></app-character-card>
+  }
+</section>
