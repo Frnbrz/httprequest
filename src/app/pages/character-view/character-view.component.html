@@ -1,1 +1,29 @@
-<app-character-card [character]="character" />
+@if(character){
+<div class="row g-0">
+  <figure class="col-md-4">
+    <img
+      src="{{ character.image }}"
+      class="img-fluid rounded-start"
+      alt="{{ character.name }}"
+    />
+  </figure>
+  <div class="col-md-8">
+    <div class="card-body">
+      <h1 class="card-title">{{ character.name }}</h1>
+      <p class="card-text"><strong>ID:</strong> {{ character.id }}</p>
+      <p class="card-text"><strong>Race:</strong> {{ character.race }}</p>
+      <p class="card-text"><strong>Gender:</strong> {{ character.gender }}</p>
+      <p class="card-text">
+        <strong>Ki:</strong> {{ character.ki }} / {{ character.maxKi }}
+      </p>
+      <p class="card-text">
+        <strong>Affiliation:</strong> {{ character.affiliation }}
+      </p>
+      <p class="card-text">
+        <strong>Description:</strong> {{ character.description }}
+      </p>
+    </div>
+  </div>
+</div>
+
+}
