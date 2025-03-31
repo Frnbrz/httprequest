@@ -1,3 +1,8 @@
+<div class="buttons d-flex justify-content-between">
+  <button class="btn btn-warning" (click)="onPrevPage()">Anterior</button>
+  <button class="btn btn-warning" (click)="onNextPage()">Siguiente</button>
+</div>
+
 <section class="list-group">
   @for (character of characters; track $index) {
   <article class="list-group-item" style="max-width: 540px">

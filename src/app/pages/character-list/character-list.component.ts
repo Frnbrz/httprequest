@@ -13,8 +13,26 @@ import { CharacterCardComponent } from '../../components/character-card/characte
 export class CharacterListComponent {
   characters: Character[] = [];
   characterService = inject(CharactersService);
+  pageNext: string = '';
+  pagePrev: string = '';
 
   async ngOnInit() {
-    this.characters = (await this.characterService.getAll()).items;
+    this.getData();
+  }
+
+  async getData(url: string | undefined = undefined) {
+    const response: IResponse = await this.characterService.getAll(url);
+    this.characters = response.items;
+    this.pageNext = response.links.next;
+    this.pagePrev = response.links.previous;
+
+    console.log('next' + this.pageNext, 'prev' + this.pagePrev);
+  }
+
+  onNextPage() {
+    this.getData(this.pageNext);
+  }
+  onPrevPage() {
+    this.getData(this.pagePrev);
   }
 }

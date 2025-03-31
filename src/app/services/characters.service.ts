@@ -11,8 +11,8 @@ export class CharactersService {
   httpClient = inject(HttpClient);
   private readonly url = 'https://dragonball-api.com/api/characters';
 
-  getAll(): Promise<IResponse> {
-    return lastValueFrom(this.httpClient.get<IResponse>(this.url));
+  getAll(url: string = this.url): Promise<IResponse> {
+    return lastValueFrom(this.httpClient.get<IResponse>(url));
   }
 
   async getById(id: number): Promise<Character> {
